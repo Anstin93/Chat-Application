@@ -17,7 +17,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = " https://thawing-hollows-10324.herokuapp.com/";
+  const ENDPOINT = "https://react-chat-applicationnn.herokuapp.com/";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);

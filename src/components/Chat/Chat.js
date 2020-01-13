@@ -17,15 +17,15 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "https://react-chat-applicationnn.herokuapp.com/";
+  const ENDPOINT = "https://project-chat-application.herokuapp.com/";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
     socket = io(ENDPOINT);
 
-    setName(name);
     setRoom(room);
+    setName(name);
 
     socket.emit("join", { name, room }, error => {
       if (error) {
@@ -69,7 +69,7 @@ const Chat = ({ location }) => {
           sendMessage={sendMessage}
         />
       </div>
-      <TextContainer users={users}/>
+      <TextContainer users={users} />
     </div>
   );
 };
